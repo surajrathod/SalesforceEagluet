@@ -1,8 +1,8 @@
-import { LightningElement,api } from 'lwc';
+import { LightningElement,api,track } from 'lwc';
 
 export default class Setting extends LightningElement {
-    @api userSettings;
-
+    @api userSettings={};
+    
 
 
     handleSliderChange(e){
@@ -13,5 +13,9 @@ export default class Setting extends LightningElement {
        updatedSetting[mode]= Number(value);
        console.log(updatedSetting)
        this.dispatchEvent(new CustomEvent('updatesettings',{detail:updatedSetting}))
+    }
+
+    HandleResetToDefaultValues(){
+        this.dispatchEvent(new CustomEvent('resetdefaultvalue'));
     }
 }

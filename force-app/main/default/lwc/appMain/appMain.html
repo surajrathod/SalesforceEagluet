@@ -6,7 +6,8 @@
                 value="Timer"
                 icon-name="standard:operating_hours"
                 class='textcolor-offwhite'>
-                    <c-Timer>
+                    <c-Timer
+                    focus-time-value={focusvalue}>
 
                     </c-Timer>
                 </lightning-tab>
@@ -16,7 +17,8 @@
                 icon-name="standard:settings" >
                     <c-setting 
                     user-settings={USER_SETTINGS}
-                    onupdatesettings={UpdateUserSettings}>
+                    onupdatesettings={UpdateUserSettings}
+                    onresetdefaultvalue={ResetToDefault}>
                     </c-setting>
 
                 </lightning-tab>
