@@ -6,14 +6,15 @@
         <div class='clock-inner slds-is-relative slds-m-bottom_small slds-m-right_medium'>
             <div class="slds-grid slds-wrap">
                 <div class=" slds-col slds-size_1-of-2 clock__shape clock__minutes">
-                    <p class='clock__text'>3</p>
+                    <p class='clock__text'>{Minute}</p>
                 </div>
                 <div class="slds-col slds-size_1-of-2 clock__shape clock__seconds">
-                    <p class='clock__text'>30</p>
+                    <p class='clock__text'>{Seconds}</p>
                 </div>
             </div>
-            <template if:false={isPlaying}>
-                <div class="clock__btn clock__play slds-is-absolute">
+            <template if:false={playing}>
+                <div class="clock__btn clock__play slds-is-absolute"
+                onclick={startTimer}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="35"
@@ -27,8 +28,9 @@
                     <!-- play button -->
                   </div>
             </template>
-            <template if:true={isPlaying}>
-              <div class="clock__btn clock__pause slds-is-absolute ">
+            <template if:true={playing}>
+              <div class="clock__btn clock__pause slds-is-absolute "
+              onclick={pauseTimer}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="35"
@@ -43,6 +45,7 @@
             </template>
         </div>
         <button class="slds-button slds-text-heading_small basebutton"
+        onclick={stopTimer}
         >Reset</button>
     </div>
 </template>
