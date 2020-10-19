@@ -1,0 +1,21 @@
+.textcolor-offwhite{
+    color:var(--offwhite);
+}
+
+
+.basebutton{
+    color:var(--offwhite);
+    outline:none;
+}
+.basebutton:hover{
+    color:var(--secondary-color);
+}
+.btn__rounded{
+    color:var(--secondary-color);
+    background-color: transparent;
+    border-color:var(--secondary-color);
+}
+.btn__rounded:hover{
+    background-color:var(--secondary-color);
+    color:var(--offwhite);
+}

@@ -1,0 +1,17 @@
+@import 'c/cssLibrary';
+
+
+.timer-setting__area {
+    margin: 3.2em 0em 2.2em 1.1em;
+}
+.timer-setting__text{
+    color:var(--offwhite);
+}
+.timer-setting__box{
+    background-color: var(--primary-color-light);
+    border-radius: 5px;
+}
+.timer-setting__value{
+    background-color:var(--primary-color);
+    border-radius:2px;
+}

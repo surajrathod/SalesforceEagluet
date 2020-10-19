@@ -1,0 +1,57 @@
+<template>
+    <div class="timer-setting__area ">
+        <div class="slds-form-element timer-setting__box slds-p-around_small slds-m-right_small slds-m-bottom_small">
+            <label class="slds-form-element__label" for="focus">
+              <span class="slds-slider-label">
+                <span class="slds-slider-label__label slds-text-heading_medium timer-setting__text">Focus</span>
+              </span>
+            </label>
+            <div class="slds-form-element__control">
+              <div class="slds-slider">
+                <input type="range" id="focus" class="slds-slider__range" min="1" max="60" value={userSettings.FocusValue} data-mode='FocusValue' onchange={handleSliderChange}/>
+                <span class="slds-slider__value slds-m-left_small timer-setting__value slds-p-around__medium timer-setting__text" aria-hidden="true">{userSettings.FocusValue}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slds-form-element timer-setting__box slds-p-around_small slds-m-right_small slds-m-bottom_small">
+            <label class="slds-form-element__label" for="break">
+              <span class="slds-slider-label">
+                <span class="slds-slider-label__label slds-text-heading_medium timer-setting__text">Break</span>
+              </span>
+            </label>
+            <div class="slds-form-element__control">
+              <div class="slds-slider">
+                <input type="range" id="break" class="slds-slider__range" min="1" max="60" value={userSettings.BreaksValue} data-mode='BreaksValue' onchange={handleSliderChange} />
+                <span class="slds-slider__value timer-setting__value slds-m-left_small slds-p-around__medium timer-setting__text" aria-hidden="true">{userSettings.BreaksValue}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slds-form-element timer-setting__box slds-p-around_small slds-m-right_small slds-m-bottom_small">
+            <label class="slds-form-element__label" for="round">
+              <span class="slds-slider-label">
+                <span class="slds-slider-label__label slds-text-heading_medium timer-setting__text">Rounds</span>
+              </span>
+            </label>
+            <div class="slds-form-element__control">
+              <div class="slds-slider">
+                <input type="range" id="round" class="slds-slider__range" min="1" max="6" value={userSettings.RoundsValue} data-mode='RoundsValue' onchange={handleSliderChange}/>
+                <span class="slds-slider__value timer-setting__value slds-m-left_small slds-p-around__medium timer-setting__text" aria-hidden="true">{userSettings.RoundsValue}</span>
+              </div>
+            </div>
+          </div>
+          <div class="slds-grid slds-grid_align-end slds-m-right_small">
+            <div class="slds-col slds-p-vertical_small slds-p-horizontal_x-small">
+              <button class="slds-button  slds slds-text-heading_small basebutton" 
+                      onclick={handleDefaultState}>Reset Default</button>
+            </div>
+
+            <div class="slds-col slds-p-vertical_small slds-p-horizontal_x-small">
+              <button class="slds-button slds-button_neutral btn__rounded slds-text-heading_small"
+                      onclick={saveCurrentState}>Save</button>
+            </div>
+          </div>
+
+    </div>
+</template>

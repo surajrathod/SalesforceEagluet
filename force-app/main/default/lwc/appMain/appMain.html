@@ -1,0 +1,25 @@
+<template>
+        <lightning-tabset variant="standard" active-tab-value="Timer" >
+            <div class="container">
+                <lightning-tab 
+                label="Timer" 
+                value="Timer"
+                icon-name="standard:operating_hours"
+                class='textcolor-offwhite'>
+                    <c-Timer>
+
+                    </c-Timer>
+                </lightning-tab>
+                <lightning-tab 
+                label="Setting" 
+                value="Setting"
+                icon-name="standard:settings" >
+                    <c-setting 
+                    user-settings={USER_SETTINGS}
+                    onupdatesettings={UpdateUserSettings}>
+                    </c-setting>
+
+                </lightning-tab>
+        </div>
+        </lightning-tabset>
+</template>

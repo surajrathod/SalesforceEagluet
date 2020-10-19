@@ -1,0 +1,48 @@
+<template>
+    <div class="clock-timer">
+        <div class="slds-m-top_small slds-m-bottom_medium">
+            <h2 class="slds-text-heading_large ">Study Work</h2>
+        </div>
+        <div class='clock-inner slds-is-relative slds-m-bottom_small slds-m-right_medium'>
+            <div class="slds-grid slds-wrap">
+                <div class=" slds-col slds-size_1-of-2 clock__shape clock__minutes">
+                    <p class='clock__text'>3</p>
+                </div>
+                <div class="slds-col slds-size_1-of-2 clock__shape clock__seconds">
+                    <p class='clock__text'>30</p>
+                </div>
+            </div>
+            <template if:false={isPlaying}>
+                <div class="clock__btn clock__play slds-is-absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="35"
+                      viewBox="0 0 24 24"
+                      width="35"
+                      fill="var(--offwhite)"
+                    >
+                      <path d="M8 5v14l11-7z" ></path>
+                      <path d="M0 0h24v24H0z" fill="none" ></path>
+                    </svg>
+                    <!-- play button -->
+                  </div>
+            </template>
+            <template if:true={isPlaying}>
+              <div class="clock__btn clock__pause slds-is-absolute ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="35"
+                  viewBox="0 0 24 24"
+                  width="35"
+                  fill="var(--offwhite)"
+                >
+                  <path d="M0 0h24v24H0V0z" fill="none" ></path>
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" ></path>
+                </svg>
+              </div>
+            </template>
+        </div>
+        <button class="slds-button slds-text-heading_small basebutton"
+        >Reset</button>
+    </div>
+</template>
