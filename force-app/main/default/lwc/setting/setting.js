@@ -11,7 +11,7 @@ export default class Setting extends LightningElement {
         
        let updatedSetting={...this.userSettings}
        updatedSetting[mode]= Number(value);
-       console.log(updatedSetting)
+       
        this.dispatchEvent(new CustomEvent('updatesettings',{detail:updatedSetting}))
     }
 

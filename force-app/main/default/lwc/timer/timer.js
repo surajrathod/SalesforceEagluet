@@ -39,7 +39,7 @@ export default class Timer extends LightningElement {
           this._renderMinuteSecond(min, sec)
         }
       }
-    }, 1000)
+    }, 100)
   }
 
   startTimer () {
@@ -62,6 +62,7 @@ export default class Timer extends LightningElement {
     clearInterval(this.timerId)
     this.timerId = null
     this.playing = false
+    console.log(this.focusTimeValue)
     this._renderMinuteSecond(this.focusTimeValue,0);
   }
 
@@ -69,9 +70,9 @@ export default class Timer extends LightningElement {
     return this.playing
   }
 
-  _renderMinuteSecond (min, sec) {
+  @api _renderMinuteSecond (min, sec) {
     this.Minute = min
     this.Seconds= sec
   }
-    
+
 }

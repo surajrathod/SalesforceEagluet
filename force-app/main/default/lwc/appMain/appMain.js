@@ -26,7 +26,7 @@ export default class AppMain extends LightningElement {
             [ROUND_KEY]:this.DEFAULT_ROUNDS
             }
     }
-    @api get focusvalue(){
+     get focusvalue(){
         let focusvalue=this.USER_SETTINGS[FOCUS_KEY];
         return focusvalue;
     }
@@ -47,7 +47,8 @@ export default class AppMain extends LightningElement {
     UpdateUserSettings(event){
         this.USER_SETTINGS=event.detail;
         this.SaveToDB();
-        this.template.querySelector("c-timer").stopTimer();
+        
+        this.renderTimerClock();
     }
 
     SaveToDB(){
@@ -57,5 +58,12 @@ export default class AppMain extends LightningElement {
 
         this.USER_SETTINGS=this.getDefaultValue();
         localStorage.setItem(this.USER_SETTINGKEY,JSON.stringify(this.USER_SETTINGS));
+        this.renderTimerClock();
     }
+
+    renderTimerClock(){
+        let FocusVal=this.focusvalue;
+        this.template.querySelector('c-timer')._renderMinuteSecond(FocusVal,0);
+    }
+  
 }
