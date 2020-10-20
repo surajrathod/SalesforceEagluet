@@ -1,4 +1,5 @@
 import { LightningElement,api ,track } from 'lwc';
+import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 
 export default class Timer extends LightningElement {
     @api focusTimeValue
@@ -35,6 +36,15 @@ export default class Timer extends LightningElement {
         if (this.countdown <= 0) {
           this.stopTimer()
           
+        }else if (this.countdown==5000){
+          this._renderMinuteSecond(min, sec)
+          const event=new ShowToastEvent({
+            title:'Break',
+            message:'Be Prepare for the Break in 5 second',
+            varient:'warning'
+          });
+          
+          this.dispatchEvent(event);
         } else {
           this._renderMinuteSecond(min, sec)
         }
