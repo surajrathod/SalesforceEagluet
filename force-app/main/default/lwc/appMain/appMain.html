@@ -7,7 +7,9 @@
                 icon-name="standard:operating_hours"
                 class='textcolor-offwhite'>
                     <c-Timer
-                    focus-time-value={focusvalue}>
+                    focus-time-value={focusvalue}
+                    onopenmodel={openModeWindow}
+                    mode='focus'>
 
                     </c-Timer>
                 </lightning-tab>
@@ -24,4 +26,5 @@
                 </lightning-tab>
         </div>
         </lightning-tabset>
+        <c-model-window break-timer-value={breakvalue} mode='break'></c-model-window>
 </template>

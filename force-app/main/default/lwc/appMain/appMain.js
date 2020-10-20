@@ -30,6 +30,10 @@ export default class AppMain extends LightningElement {
         let focusvalue=this.USER_SETTINGS[FOCUS_KEY];
         return focusvalue;
     }
+    get breakvalue(){
+        let breakvalue=this.USER_SETTINGS[BREAK_KEY];
+        return breakvalue;
+    }
 
     getLocalStorage(){
         
@@ -64,6 +68,9 @@ export default class AppMain extends LightningElement {
     renderTimerClock(){
         let FocusVal=this.focusvalue;
         this.template.querySelector('c-timer')._renderMinuteSecond(FocusVal,0);
+    }
+    openModeWindow(){
+        this.template.querySelector('c-model-window').openmodel();
     }
   
 }
