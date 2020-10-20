@@ -1,0 +1,11 @@
+@import 'c/cssLibrary';
+
+.container{
+    background-color:var(--secondary-color);
+}
+
+
+.primarybg{
+    background-color:var(--primary-color);
+    border-radius: 0;
+}
