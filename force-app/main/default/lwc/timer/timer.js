@@ -38,6 +38,9 @@ export default class Timer extends LightningElement {
         // send message to the main process
         if (this.countdown <= 0) {
           this.stopTimer()
+          if(this.mode=='break'){
+            this.dispatchEvent(new CustomEvent('closemodel'));
+          }
           this.dispatchEvent(new CustomEvent('openmodel'))
           
         }else if (this.countdown==5000){
@@ -56,7 +59,7 @@ export default class Timer extends LightningElement {
     }, 100)
   }
 
-  startTimer () {
+  @api startTimer () {
     // change the playing to true call the counter
     this.playing = true
     this.counter()
