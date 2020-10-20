@@ -3,6 +3,8 @@ import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 
 export default class Timer extends LightningElement {
     @api focusTimeValue
+    @api mode
+     modeBoolean
     @track Seconds=0;
     @track Minute=0;
     playing = false;
@@ -11,6 +13,7 @@ export default class Timer extends LightningElement {
 
     connectedCallback(){
         this.Minute=this.focusTimeValue;
+        this.getmode();
     }
     
   counter () {
@@ -35,6 +38,7 @@ export default class Timer extends LightningElement {
         // send message to the main process
         if (this.countdown <= 0) {
           this.stopTimer()
+          this.dispatchEvent(new CustomEvent('openmodel'))
           
         }else if (this.countdown==5000){
           this._renderMinuteSecond(min, sec)
@@ -83,6 +87,13 @@ export default class Timer extends LightningElement {
   @api _renderMinuteSecond (min, sec) {
     this.Minute = min
     this.Seconds= sec
+  }
+  getmode(){
+    if(this.mode ==='focus'){
+      this.modeBoolean= true
+    }else if(this.mode==='break'){
+    this.modeBoolean= false
+    }
   }
 
 }

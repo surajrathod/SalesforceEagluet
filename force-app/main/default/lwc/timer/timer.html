@@ -12,6 +12,7 @@
                     <p class='clock__text'>{Seconds}</p>
                 </div>
             </div>
+            <template if:true={modeBoolean}>
             <template if:false={playing}>
                 <div class="clock__btn clock__play slds-is-absolute"
                 onclick={startTimer}>
@@ -43,9 +44,13 @@
                 </svg>
               </div>
             </template>
+          </template>
+        
         </div>
+        <template if:true={modeBoolean}>
         <button class="slds-button slds-text-heading_small basebutton"
         onclick={stopTimer}
         >Reset</button>
+      </template>
     </div>
 </template>
