@@ -4,12 +4,14 @@ import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 export default class Timer extends LightningElement {
     @api focusTimeValue
     @api mode
-     modeBoolean
+     
     @track Seconds=0;
     @track Minute=0;
+
     playing = false;
     countdown = null;
     timerId = null;
+    modeBoolean
 
     connectedCallback(){
         this.Minute=this.focusTimeValue;
@@ -50,8 +52,9 @@ export default class Timer extends LightningElement {
             message:'Be Prepare for the Break in 5 second',
             varient:'warning'
           });
-          
-          this.dispatchEvent(event);
+          if(this.mode=='focus'){
+            this.dispatchEvent(event);
+          }
         } else {
           this._renderMinuteSecond(min, sec)
         }
