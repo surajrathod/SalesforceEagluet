@@ -2,12 +2,22 @@
 <template if:true={showModel}>
     <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open ">
         <div class="slds-modal__container container">
-          
-          <div class="slds-modal__content slds-p-around_medium primarybg" id="modal-content-id-1">
+          <div class='slds-grid slds-grid_vertical slds-grid_vertical-align-center'>
+            <p class='slds-text-heading_medium slds-m-bottom_xxx-small'><strong>Do this Workout</strong></p>
+            <p class='slds-text-heading_medium'>Go somewhere else</p>
+            <ul class="slds-m-top_medium slds-list_dotted ">
+            <li>Drink Water</li>
+            <li>Eye Rotate</li>
+            <li>Push Ups</li>
+            <li>Chair leg raise</li>
+            </ul>
+          </div>
+         <h2 class="slds-text-heading_large slds-text-align_center textcolor-offwhite slds-m-vertical_small"><strong>🧘‍♀️ Breathe with me 🧘‍♂️</strong></h2>
+          <div class="slds-modal__content slds-p-around_medium slds-grid slds-grid_align-center modelbox" id="modal-content-id-1">
            <c-Timer focus-time-value={breakTimerValue}
            mode='break'
            onclosemodel={closemodel}
-           ></c-Timer>
+           class="anime__breadth"></c-Timer>
           </div>
         </div>
       </section>
