@@ -15,9 +15,13 @@ export default class ModelWindow extends LightningElement {
     }
     startTimer(){
         setTimeout(() => {
-            console.log(this.template.querySelector('c-Timer').startTimer())
+            this.template.querySelector('c-Timer').startTimer()
         }, 200);
         
+    }
+    //pass the value to the parent
+    StartNextRound(){
+        this.dispatchEvent(new CustomEvent('startnextround'));
     }
 
 }

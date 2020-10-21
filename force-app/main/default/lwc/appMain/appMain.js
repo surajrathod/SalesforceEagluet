@@ -11,6 +11,7 @@ export default class AppMain extends LightningElement {
     DEFAULT_BREAK=1;
     DEFAULT_ROUNDS=2;
     USER_SETTINGKEY='UserStorage';
+    CURRENT_ROUND=1;
 
     @api USER_SETTINGS={};
 
@@ -33,6 +34,11 @@ export default class AppMain extends LightningElement {
     get breakvalue(){
         let breakvalue=this.USER_SETTINGS[BREAK_KEY];
         return breakvalue;
+    }
+
+    get NoofRounds(){
+        let RoundValue=this.USER_SETTINGS[ROUND_KEY];
+        return RoundValue;
     }
 
     getLocalStorage(){
@@ -71,6 +77,15 @@ export default class AppMain extends LightningElement {
     }
     openModeWindow(){
         this.template.querySelector('c-model-window').openmodel();
+    }
+    StartNextRound(){
+        if(this.CURRENT_ROUND< this.NoofRounds){
+            this.template.querySelector('c-timer').startTimer();
+            this.CURRENT_ROUND++
+        }else{
+            this.CURRENT_ROUND=1;
+            return;
+        }
     }
   
 }

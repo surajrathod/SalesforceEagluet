@@ -42,6 +42,7 @@ export default class Timer extends LightningElement {
           this.stopTimer()
           if(this.mode=='break'){
             this.dispatchEvent(new CustomEvent('closemodel'));
+            this.dispatchEvent(new CustomEvent('startnextround'));
           }
           this.dispatchEvent(new CustomEvent('openmodel'))
           
@@ -59,7 +60,7 @@ export default class Timer extends LightningElement {
           this._renderMinuteSecond(min, sec)
         }
       }
-    }, 100)
+    }, 1000)
   }
 
   @api startTimer () {
