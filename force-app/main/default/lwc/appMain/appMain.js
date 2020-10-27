@@ -10,7 +10,7 @@ export default class AppMain extends LightningElement {
     DEFAULT_FOCUS=25;
     DEFAULT_BREAK=1;
     DEFAULT_ROUNDS=2;
-    USER_SETTINGKEY='UserStorage';
+    USER_SETTINGKEY='EagluetUserStorage';
     CURRENT_ROUND=1;
 
     @api USER_SETTINGS={};
