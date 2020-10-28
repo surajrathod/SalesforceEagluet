@@ -43,14 +43,14 @@ export default class AppMain extends LightningElement {
 
     getLocalStorage(){
         
-        if(!localStorage.getItem(this.USER_SETTINGKEY)){
+        if(!sessionStorage.getItem(this.USER_SETTINGKEY)){
 
             let UserSettingJson= this.getDefaultValue();
 
-            localStorage.setItem(this.USER_SETTINGKEY,JSON.stringify(UserSettingJson));
-            this.USER_SETTINGS=JSON.parse(localStorage.getItem(this.USER_SETTINGKEY));
+            sessionStorage.setItem(this.USER_SETTINGKEY,JSON.stringify(UserSettingJson));
+            this.USER_SETTINGS=JSON.parse(sessionStorage.getItem(this.USER_SETTINGKEY));
         }else{
-            this.USER_SETTINGS=JSON.parse(localStorage.getItem(this.USER_SETTINGKEY));
+            this.USER_SETTINGS=JSON.parse(sessionStorage.getItem(this.USER_SETTINGKEY));
         }
     }
 
@@ -62,12 +62,12 @@ export default class AppMain extends LightningElement {
     }
 
     SaveToDB(){
-        localStorage.setItem(this.USER_SETTINGKEY,JSON.stringify(this.USER_SETTINGS));
+        sessionStorage.setItem(this.USER_SETTINGKEY,JSON.stringify(this.USER_SETTINGS));
     }
     ResetToDefault(){
 
         this.USER_SETTINGS=this.getDefaultValue();
-        localStorage.setItem(this.USER_SETTINGKEY,JSON.stringify(this.USER_SETTINGS));
+        sessionStorage.setItem(this.USER_SETTINGKEY,JSON.stringify(this.USER_SETTINGS));
         this.renderTimerClock();
     }
 
