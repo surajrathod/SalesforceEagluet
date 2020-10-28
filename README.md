@@ -5,7 +5,7 @@
     SalesforceEagluet 
 </h1>
 
-This app is based on the Pomodoro Technique whic is Time Management method developed by Francesco Cirillo. It uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by breaks. Each interval is known as a pomodoro.
+This app is based on the Pomodoro Technique which is Time Management method developed by Francesco Cirillo. It uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by breaks. Each interval is known as a pomodoro.
 
 ![Eagluet](https://res.cloudinary.com/atnak/image/upload/v1591102778/homescreen_udwdgd.png)
 
