@@ -17,7 +17,7 @@ export default class AppMain extends LightningElement {
 
 
     connectedCallback(){
-        loadStyle(this,Css+'/variable.css');
+        loadStyle(this.Css+'/variable.css');
         this.getLocalStorage();
     }
     getDefaultValue(){
